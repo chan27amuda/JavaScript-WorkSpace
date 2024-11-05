@@ -43,7 +43,45 @@ console.log(femaleStudent);
 
 
 //3. reduce() method/function
-//
-//
+//Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result,
+//and is provided as an argument in the next call to the callback function.
+//@param callbackfn -- A function that accepts up to four arguments. The reuce method calls the callbackfn function one time for each element in the array.
+//@param initialValue -- If initilValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function
+//provides this value as an argument instead of an array value.
+
+let numb = [1,2,3,4,5]; //Sum of Array elements is 15
+let sum = numb.reduce((acc,num) => acc+num, 0);
+//1st --> 0+1 (acc+num) = 1
+//2nd --> 1+2 = 3
+//3rd --> 3+3 = 6
+//4th --> 6+4 = 10
+//5th --> 10+5 = 15
+console.log(sum);
+
+//Max number in an Array
+let top = [10,5,25,8,30,15,45];
+let maxNumber = top.reduce((max,num) => {
+    if(num > max){
+        return num;
+    }else{
+        return max;
+    }
+}, top[0]);
+console.log("Max Number in an Array: " + maxNumber);
+
+//Minimum Number in an Array using Reduce Method
+
+//cart: prodName, price --> return total price for all the products in the cart
+let cartItems = [
+    {prodName:"Jeans", price:2000},
+    {prodName:"Shirt", price:1500},
+    {prodName:"T-Shirt", price:1000},
+    {prodName:"Shoes", price:1800},
+    {prodName:"Jacket", price:3000},
+];
+
+let totalPrice = cartItems.reduce((total,item) => total + item.price, 0);
+console.log(totalPrice);
+
 
 
